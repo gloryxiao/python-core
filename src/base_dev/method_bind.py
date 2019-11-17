@@ -19,6 +19,10 @@ class Bar(object):
         print "execute static bar, x: %s" % x
 
 
+class SubBar(Bar):
+    pass
+
+
 if __name__ == "__main__":
     b = Bar()
     print "foo:", foo
@@ -36,3 +40,8 @@ if __name__ == "__main__":
     Bar.class_bar(1)
     print "Bar.static_bar", Bar.static_bar
     Bar.static_bar("hah")
+
+    print "Bar.class_bar:", Bar.class_bar, ", id:", id(Bar.class_bar)
+    Bar.class_bar(1)
+    print "SubBar.class_bar", SubBar.class_bar, ", id:", id(SubBar.class_bar)
+    SubBar.class_bar(2)
