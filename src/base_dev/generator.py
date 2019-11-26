@@ -6,11 +6,22 @@ def fab(n):
     x, y = 1, 1
     step = 1
     while step <= n:
-        yield x
-        tmp = x
-        x = y
-        y += tmp
-        step += 1
+        try:                           # try except 包含yield也没有问题
+            yield x
+            tmp = x
+            x = y
+            y += tmp
+            step += 1
+            if x > 100:
+                raise Exception("too big count")
+        except Exception as e:
+            print e.message
+            # raise e
+
+        # try:                          # try except 语句不包含yield逻辑是OK的，没有语法问题
+        #     raise Exception(u"aa")
+        # except Exception as e:
+        #     pass
 
 
 if __name__ == "__main__":
@@ -21,6 +32,10 @@ if __name__ == "__main__":
 
     f1 = (x+1 for x in xrange(100))
     print f1
+    print dir(f1)
     f2 = xrange(10)
     print f2
+    print type(f2), type(type(f2))
+    print dir(f2)
+
 
