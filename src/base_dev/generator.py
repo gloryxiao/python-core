@@ -3,6 +3,10 @@
 
 
 def fab(n):
+    if n <= 1:
+        return                         # python3.3以前不允许生成器return 带参数
+        # return None                  # 语法error
+
     x, y = 1, 1
     step = 1
     while step <= n:
@@ -13,7 +17,8 @@ def fab(n):
             y += tmp
             step += 1
             if x > 100:
-                raise Exception("too big count")
+                # raise Exception("too big count")
+                return
         except Exception as e:
             print e.message
             # raise e
@@ -25,7 +30,7 @@ def fab(n):
 
 
 if __name__ == "__main__":
-    f = fab(10)
+    f = fab(-20)
     print f
     for item in f:
         print item
