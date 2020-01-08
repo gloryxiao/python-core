@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding=utf-8
 
+import inspect
+
 
 def fab(n):
     if n <= 1:
@@ -30,10 +32,14 @@ def fab(n):
 
 
 if __name__ == "__main__":
-    f = fab(-20)
+    f = fab(10)
     print f
-    for item in f:
-        print item
+    # for item in f:
+    #     print item
+    print f.next()
+    print "f: status,", inspect.isgenerator(f)
+    print f.send(1)
+    print f.send(None)
 
     f1 = (x+1 for x in xrange(100))
     print f1
