@@ -1,1 +1,2 @@
 # python packages independent
+pytest==4.6.9
