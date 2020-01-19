@@ -1,1 +1,8 @@
+# pycharm configuration
 .idea
+
+# pytest cache
+.pytest_cache
+
+# pyc file
+*.pyc
