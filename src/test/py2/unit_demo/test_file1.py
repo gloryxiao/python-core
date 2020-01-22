@@ -2,7 +2,7 @@
 # coding=utf-8
 
 import unittest
-from src.test.widget import Widget
+from src.test.py2.widget import Widget
 
 
 class WidgetTestCase(unittest.TestCase):
