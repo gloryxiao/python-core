@@ -4,7 +4,7 @@
 
 class Widget(object):
     def __init__(self, title):
-        print "init called"
+        print("init called")
         self.title = title
         self._w = 0
         self._h = 0
@@ -17,6 +17,6 @@ class Widget(object):
         self._h = h
 
     def dispose(self):
-        print "dispose called"
+        print("dispose called")
         self._w = 0
         self._h = 0
