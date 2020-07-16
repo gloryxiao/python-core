@@ -6,3 +6,6 @@
 
 # pyc file
 *.pyc
+
+/venv
+/venv2

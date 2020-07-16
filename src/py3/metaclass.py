@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # coding=utf-8
 
+print("module import ......")
+
 
 # py3的元类声明不同于py2，在类声明时使用metaclass来绑定。元类一样继承type类型，元类的方法绑定参数是cls，除了__new__(cls, *args, **kw)
 # 中cls为元类类型外，其他方法参数（如__init__(cls, *args, **kw)）中cls全部绑定声明的类类型
 class Meta(type):
     def __new__(cls, name, bases, dicts):
-        # 编译解释函数，生成类型信息
+        # 模块导入时，编译解释函数，生成类型信息
         print("in meta __new__, cls is: ", cls, ", name: ", name, ", bases: ", bases, ", dicts: ", dicts)
         x = super().__new__(cls, name, bases, dicts)
         return x
